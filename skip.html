@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        a {
+            list-style: none;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #main {
+            padding: 40px 0;
+        }
+
+        #main_ctn {
+            width: 300px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        #main_ctn s {
+            width: 70px;
+            height: 70px;
+            background: url("imgs/icon.png") no-repeat -100px -50px;
+            float: left;
+        }
+
+        #main_ctn p b {
+            font: 22px "microsoft yahei";
+            line-height: 40px;
+            color: coral;
+            margin-left: -50px;
+        }
+
+        #main_ctn p span {
+
+            font: 13px "microsoft yahei";
+        }
+
+        #main_ctn p a {
+            font: 13px "microsoft yahei";
+            color: #0088ff;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <main id="main_ctn">
+        <s></s>
+        <p>
+            <b> 成功注册</b><br>
+            <span id="count">5</span><span>秒后跳转</span>
+            <a href="jd.html">点击直接跳转</a>
+        </p>
+    </main>
+</div>
+<script type="text/javascript">
+    onload = function () {
+        var p = document.getElementById("count");
+        var intervalId = setInterval(function () {
+            var count = p.innerHTML;
+            count--;
+            p.innerHTML = count;
+            if (count <= 0) {
+                clearInterval(intervalId);
+                window.location.href = "login.html";
+            }
+        }, 1000);
+    }
+</script>
+</body>
+</html>
